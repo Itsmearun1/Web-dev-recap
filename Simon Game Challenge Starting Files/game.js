@@ -21,6 +21,7 @@ function nextSequnece() {
   gamePattern.push(randomChosenColour);
   console.log(gamePattern, userClickedPattern);
   var newId = "#" + randomChosenColour;
+  console.log(newId)
   $(newId).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
   playSound("sounds/" + randomChosenColour + ".mp3");
   level++;
