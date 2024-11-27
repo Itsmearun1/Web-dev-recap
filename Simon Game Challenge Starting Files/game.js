@@ -62,5 +62,4 @@ $(".btn").click(function (e) {
     }, 2000);
   }
 
-  // console.log(gamePattern,userClickedPattern)
 });
