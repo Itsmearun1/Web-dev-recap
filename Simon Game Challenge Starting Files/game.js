@@ -34,6 +34,9 @@ $(document).keydown(() => {
     $("h1").text("level " + level);
     started = true;
   }
+  else{
+    console.log("trial")
+  }
 });
 
 $(".btn").click(function (e) {
@@ -63,3 +66,4 @@ $(".btn").click(function (e) {
   }
 
 });
+
