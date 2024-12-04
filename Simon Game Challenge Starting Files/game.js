@@ -1,3 +1,6 @@
+
+//SIMON GAME
+
 var gamePattern = [];
 var userClickedPattern = [];
 var buttonColors = ["red", "blue", "green", "yellow"];
@@ -46,6 +49,7 @@ function nextSequnece() {
 //function to act on button click
 
 $(".btn").click(function (e) {
+
   var userChosenColour = $(this).attr("id");
   animatePress($(this));
   playSound("sounds/" + userChosenColour + ".mp3");
@@ -58,7 +62,6 @@ $(".btn").click(function (e) {
   } else {
     return;
   }
-  console.log(userClickedPattern, gamePattern, "from button click");
 });
 
 //function to check the pattern is correct or not
