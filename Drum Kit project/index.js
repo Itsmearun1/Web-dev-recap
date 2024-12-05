@@ -29,6 +29,7 @@ for (let i = 0; i < buttons.length; i++) {
         break;
     }
   }
+  //function to animate
   function bAnimation(btn){
     document.querySelector("."+btn).classList.add("pressed");
     setTimeout(() => {
