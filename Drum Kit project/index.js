@@ -48,3 +48,22 @@ for (let i = 0; i < buttons.length; i++) {
     bAnimation(val)
   });
 }
+
+  function bAnimation(btn){
+    document.querySelector("."+btn).classList.add("pressed");
+    setTimeout(() => {
+        document.querySelector("."+btn).classList.remove("pressed");
+    }, 100);
+  }
+  buttons[i].addEventListener("click", function () {
+    var bVal = this.innerHTML;
+    checker(bVal);
+    bAnimation(bVal);
+  });
+
+  document.addEventListener("keydown", function (e) {
+    var val=e.key;
+    checker(val);
+    bAnimation(val)
+  });
+}
