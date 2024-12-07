@@ -1,4 +1,7 @@
+
+//Logic for drum kit
 let buttons = document.querySelectorAll(".drum");
+//Looping using for loop
 for (let i = 0; i < buttons.length; i++) {
   var audio = new Audio("sounds/tom-1.mp3");
   function checker(n) {
@@ -66,4 +69,4 @@ for (let i = 0; i < buttons.length; i++) {
     checker(val);
     bAnimation(val)
   });
-}
+
