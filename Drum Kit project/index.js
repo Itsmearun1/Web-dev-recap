@@ -1,6 +1,6 @@
-
 //Logic for drum kit
 let buttons = document.querySelectorAll(".drum");
+
 //Looping using for loop
 for (let i = 0; i < buttons.length; i++) {
   var audio = new Audio("sounds/tom-1.mp3");
@@ -32,6 +32,8 @@ for (let i = 0; i < buttons.length; i++) {
         break;
     }
   }
+
+
   //function to animate
   function bAnimation(btn){
     document.querySelector("."+btn).classList.add("pressed");
@@ -64,6 +66,16 @@ for (let i = 0; i < buttons.length; i++) {
     bAnimation(bVal);
   });
 
+  document.addEventListener("keydown", function (e) {
+    var val=e.key;
+    checker(val);
+    bAnimation(val)
+  }
+  document.addEventListener("keydown", function (e) {
+    var val=e.key;
+    checker(val);
+    bAnimation(val)
+  }
   document.addEventListener("keydown", function (e) {
     var val=e.key;
     checker(val);
