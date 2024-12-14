@@ -4,23 +4,33 @@
 3. Create a txt file to save the user input using the native fs node module.
 */
 import inquirer from "inquirer";
-import "x" from 'qr-image'
+import qr from "qr-image";
+import fs from "fs";
+
+console.log($("input").innerText)
 inquirer
   .prompt([
     {
       type: "input", // Type of prompt (e.g., input, confirm, list, etc.)
-      name: "username", // Key to store the answer
-      message: "What is your name?", // Question to ask
+      name: "URL", // Key to store the answer
+      message: "Enter the URL?", // Question to ask
     },
   ])
   .then((answers) => {
-    console.log(`Hello, ${answers.username}!`);
-    // Use user feedback for... whatever!!
+    var qr_png = qr.image(`${answers.URL}`, { type: "png" });
+    qr_png.pipe(fs.createWriteStream("qr_img2.png"));
+    console.log(`QR saved`);
+
+    fs.writeFile("URL.txt", `${answers.URL}`, function (err) {
+      if (err) throw err;
+      console.log("Saved!");
+    });
+    
   })
   .catch((error) => {
     if (error.isTtyError) {
-      // Prompt couldn't be rendered in the current environment
+      console.log("Prompt couldn't be rendered in the current environment");
     } else {
-      // Something else went wrong
+       console.log("Something else went wrong")
     }
   });
