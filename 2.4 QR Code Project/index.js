@@ -6,8 +6,18 @@
 import inquirer from "inquirer";
 import qr from "qr-image";
 import fs from "fs";
+console.log("JavaScript file is linked correctly!");
 
-console.log($("input").innerText)
+// $(document).ready(function () {
+//   // $("button").click(function(){
+//   //   // console.log($('input').val())
+//   //   console.log("sadas")
+//   // })
+//   console.log("Page has loaded!");
+// });
+// $("button").click(function () {
+//   console.log("Button clicked!");
+// });
 inquirer
   .prompt([
     {
@@ -25,12 +35,11 @@ inquirer
       if (err) throw err;
       console.log("Saved!");
     });
-    
   })
   .catch((error) => {
     if (error.isTtyError) {
       console.log("Prompt couldn't be rendered in the current environment");
     } else {
-       console.log("Something else went wrong")
+      console.log("Something else went wrong");
     }
   });
